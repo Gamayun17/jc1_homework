@@ -3,26 +3,35 @@ package pack3.gl6.pract25;
 import java.util.Scanner;
 
 public class Time {
-    public static void main(String[] args) {
-        int sec;
-        int min;
-        int hour;
-     public Time( int s, int m, int h) {
-            sec = s;
-            min = m;
-            hour = h;
-            Scanner Scanner = new Scanner(System.in);
-            System.out.print("введите s:");
-            int s = Scanner.nextInt();
-            System.out.print("введите m:");
-            int m = Scanner.nextInt();
-            System.out.print("введите h:");
-            int h = Scanner.nextInt();
-            Scanner.close();
+    private int sec;
+    private int min;
+    private int hour;
+
+    Time(int s, int m, int h) {
+        this.sec = s;
+        this.min = m;
+        this.hour = h;
+
+        public int getHour () {
+            return h;
+        };
+        public int getMin () {
+            return m;
+        };
+        public int getSec () {
+            return s;
+        };
+        public int toSec () {
+            return h * 3600 + m * 60 + s;
+        };
+
+        public static Time ofSec( int s){
+            final int h = s / 3600;
+            s %= 3600;
+            final int m = s / 60;
+            s %= 60;
+            return new Time(h, m, s);
+
         }
     }
-
-    Time time1=new Time();
-    Time time2= new Time();
-    System.out.println(time1.compareTo(time2));
 }

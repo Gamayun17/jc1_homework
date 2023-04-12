@@ -2,73 +2,86 @@ package pack3.gl6.pract26;
 
 import java.util.Scanner;
 
+import static pack3.gl6.pract26.Balance.money;
+
 public class Bankomat {
-    final Money[] money = {
-            new Money("20", 60),
-            new Money("50", 40),
-            new Money("100", 56)
-    };  //это изначальное количество денег в банкомате
 
+    static Balance[] balances;
 
-   //выбрать действие выдать или снять
-    //public void chooseAction(){
-    //System.out.println()
+    public static void startMenu() {
 
+                System.out.println("Выберите операцию: 1. Вывод средств 2. Пополнение счета");
+                int choice[]
+                switch (choice) {
+                    case 1:
+                        System.out.println("---> Вывод средств");
+                        System.out.println("Введите сумму:");
+                        int withdraw = input.nextInt();   //где-то добавить общий акк,меню что выводит и суммирует весь баланс
+                        if (money >= withdraw) {
+                            money= money - withdraw;
+                            System.out.println("Заберите деньги. Текущий баланс: " + money);
+                        } else if (withdraw >= money) {
+                            System.out.println("Недостаточно средств");
+                        } else {
+                            System.out.println("Неизвестная ошибка");
+                        }
+                        break;
+                    case 2:
 
-// добавить деньги, n это вся сумма денег
-    public int addMoney(){
-        Scanner scanner=new Scanner(System.in);
-        boolean isBanknoteCorrect;
-        int n; int s=1;
-        do {
-            n = scanner.nextInt();
-            isBanknoteCorrect = n % 20 == 0 || n % 50 == 0 || n % 100 == 0;
-            if (isBanknoteCorrect) {
-                if n % 20 == 0 {
-                    Money money = money[money.num + n];
+                        System.out.println("---> Поплнение средств");
+                        System.out.println("Введите сумму");
+                        double moreMoney = input.nextDouble();
+                        if (moreMoney > 0 && moreMoney <= 2000) {
+                            if (moreMoney % 20 == 0 || moreMoney% 50 == 0) {
+                                money += moreMoney;
+                                System.out.println("Успешно!"+ money);
+                            }
+                        } else if (moreMoney > 2000) {
+                            System.out.println("Максимальная сумма депозита за один раз: 2000");
+                        } else {
+                            System.out.println("Неизвестная ошибка");
+                        }
+                        break;
+
+                    default:
+                        System.out.println("Неизвестная операция");
+                        break;
                 }
-                   else if n % 50 == 0 {
-                    String amount = money[s+1].amount;;
-                    Money money = money[money.num + n];
-                }
-                   else
-                String amount = money[s+2].amount;;
-                Money money = money[money.num + n];
+
+
+        }
+
+    }
+
+    public static void print(Money[] money) {
+        for (int chooseNum = 1; chooseNum <= money.length; chooseNum++) {
+            int i =chooseNum - 1;
+            if (money[i] == null || money[i].getNum() <= 0) continue;
+            System.out.println("[" + chooseNum + "] " + money[i].getAmount());
+        }
+    }
+
+    public static void promptSelectMoney() {
+        System.out.println("Сумма:");
+    }
+
+    public static int readChooseNum() {
+        Scanner scanner = new Scanner(System.in);
+        String moneyNumPattern = "[1-3]";
+        boolean isCorrectValue = false;
+        int chooseNum = -1;
+        while (!isCorrectValue) {
+            if (scanner.hasNext(moneyNumPattern)) {
+                isCorrectValue = true;
+               chooseNum = scanner.nextInt();
             }
-                if (!isBanknoteCorrect){
-                    System.out.println("Принимаются купюры только номиналом 20,50,100:");
-        } while (!isBanknoteCorrect);
-            String amount = money[s+1].amount;
-             System.out.println("Выбрана купюра номиналом"+ amount);
-            return n;
+            scanner.nextLine();
+        }
+        return chooseNum;
     }
 
 
-
-// выдать деньги
-        public int takeMoney(){
-            public void printAmount() {
-                int s = 1;
-                for (Money money : money) {
-                    if
-                    (money.num > 0) {
-                        System.out.println(s + ":" + money.amount + "[" + money.num + "]");
-                    }
-                    s++;
-                }
-                System.out.println("Please select banknote:");
-            else s>=4
-                System.out.println("Выберите число от 1 до 3");
-
-            if
-
-   // Money money= money[moneyN-1];
-   // money.num--;
-  //  System.out.println("Заберите купюры"+money.amount);
-      System.out.println("Reamin"+ money.num+ " of "+ money.amount);
-   // }
-
-
 }
+
 
 

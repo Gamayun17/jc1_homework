@@ -1,11 +1,25 @@
 package pack3.gl6.pract26;
 
 public class Money {
-    String amount;
-    int num;
+    private int amount;
+   private int num;
 
     public Money(String s, int i){
-        amount=s;
-        num=i;
+       this.amount=s;
+        this.num=i;
+
+    }
+
+    public int getNum(){
+        return num;
+    }
+
+    public int getAmount(){
+
+        return amount;
+    }
+
+    public void decreaseNum(){
+        num--;
     }
 }
