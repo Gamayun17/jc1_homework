@@ -5,21 +5,25 @@ import java.util.Scanner;
 
 public class AmountOfSameWords {
 
-    //доделать!!!
-    public static void main(String[] args) {
+   public static void main(String[] args) {
+        HashMap<String, Integer> slovo = new HashMap<>();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Напишите текст: ");
         String text = scanner.nextLine();
-        String[] slovo = " ".split(text);
-        HashMap<String,Integer> slovo = new HashMap<>();
-        int countSlovo=0;
-        String key= "ночь";
-        for(int i = 0; i < slovo.size(); i++) {
-        if (slovo.containsKey("ночь")) {
-            countSlovo++;
-        } else  System.out.println("Нет слова");
-        }
+        String[] words = text.split(" ");
 
-        System.out.println("Количество повторений в тексте:"+ countSlovo );
+          for (int i = 0; i < words.length; i++) {
+            if (slovo.containsKey(words[i])) {
+                int key;
+                key = slovo.get(words[i]);
+                slovo.put(words[i], key + 1);
+            } else {
+                slovo.put(words[i], 1);
+            }
+
+            System.out.println("Количество повторений в тексте:" + slovo);
+            }
+        }
     }
-}
+
+// string ключ integer значение
