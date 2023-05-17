@@ -1,4 +1,4 @@
-package jc1_homework.pack5.pract36;
+package jc1_homework.src.pack5.pract36;
 
 import java.util.Scanner;
 
