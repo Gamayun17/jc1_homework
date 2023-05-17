@@ -1,4 +1,4 @@
-package jc1_homework.pack5.pract36;
+package jc1_homework.src.pack5.pract36;
 
 public class Main {
     public static void main(String[] args) {
