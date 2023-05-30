@@ -1,0 +1,10 @@
+Person{name='Ева', surname='Кузнецов', age=69}
+Person{name='Мария', surname='Новиков', age=89}
+Person{name='Мария', surname='Попов', age=10}
+Person{name='Ева', surname='Новиков', age=51}
+Person{name='Ева', surname='Морозов', age=92}
+Person{name='Александра', surname='Морозов', age=53}
+Person{name='София', surname='Кузнецов', age=36}
+Person{name='Ева', surname='Лебедев', age=88}
+Person{name='Алиса', surname='Петров', age=51}
+Person{name='Frank', surname='Козлов', age=69}
