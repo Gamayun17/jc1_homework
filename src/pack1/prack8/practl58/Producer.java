@@ -9,7 +9,7 @@ public class Producer implements Runnable {
     private final Warehouse wh;
 
     public Producer(Queue<Integer> queu, Object lock, Warehouse wh) {
-        this.queue = queu;
+        this.queue = queue;
         this.lock = lock;
         this.wh = wh;
     }
